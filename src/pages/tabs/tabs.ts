@@ -12,7 +12,7 @@ import { FinancasPage } from '../financas/financas';
 export class TabsPage {
 
   tab1Root = HomePage;
-  tab2Root = AboutPage;
+  //tab2Root = AboutPage;
   //tab3Root = ContactPage;
   tab3Root = FinancasPage;
   tab4Root = FeedPage;
