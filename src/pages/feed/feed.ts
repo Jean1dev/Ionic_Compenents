@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { HttpRequestProvider } from '../../providers/http-request/http-request';
 
 /**
  * Generated class for the FeedPage page.
@@ -12,9 +13,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 @Component({
   selector: 'page-feed',
   templateUrl: 'feed.html',
+  providers: [
+    HttpRequestProvider
+  ]
 })
 export class FeedPage {
-  public nome_user:String = 'Jeanluca';
+  public nome_user: String = 'Jeanluca';
   public obj_feed = {
     titulo: 'Titulo',
     data: '10/02/2018',
@@ -23,16 +27,32 @@ export class FeedPage {
     coments: 2,
     time_coment: '1h ago'
   };
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public lista_content = new Array<any>()
+
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private http: HttpRequestProvider
+  ) {
   }
 
-  public alteraNome(): void{
+  public alteraNome(): void {
     //alert('maoi')
+    //console.log("Filmes pop's",data['results']);
     this.nome_user = 'É UE';
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FeedPage');
+    this.http.getLatestMovie().subscribe(data => {
+      const response = (data as any)
+      //const retorno = JSON.parse(response.body)
+      this.lista_content = response.results
+      console.log(this.lista_content)
+      console.log(this.lista_content.length)
+    }, error => {
+      console.log('erro')
+    })
     this.alteraNome();
   }
 

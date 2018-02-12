@@ -13,6 +13,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { FeedPageModule } from '../pages/feed/feed.module';
 import { FinancasPageModule } from '../pages/financas/financas.module';
 import { IntroPageModule } from '../pages/intro/intro.module';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -28,7 +30,8 @@ import { IntroPageModule } from '../pages/intro/intro.module';
     IonicModule.forRoot(MyApp),
     FeedPageModule,
     FinancasPageModule,
-    IntroPageModule
+    IntroPageModule,
+    HttpClientModule 
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -41,7 +44,7 @@ import { IntroPageModule } from '../pages/intro/intro.module';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
   ]
 })
 export class AppModule {}
