@@ -14,6 +14,8 @@ import { FeedPageModule } from '../pages/feed/feed.module';
 import { FinancasPageModule } from '../pages/financas/financas.module';
 import { IntroPageModule } from '../pages/intro/intro.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ConfigPageModule } from '../pages/config/config.module';
+import { PerfilPageModule } from '../pages/perfil/perfil.module';
 
 
 
@@ -31,7 +33,9 @@ import { HttpClientModule } from '@angular/common/http';
     FeedPageModule,
     FinancasPageModule,
     IntroPageModule,
-    HttpClientModule 
+    HttpClientModule,
+    ConfigPageModule,
+    PerfilPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
