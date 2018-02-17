@@ -16,8 +16,13 @@ export class HttpRequestProvider {
     console.log('Hello HttpRequestProvider Provider')
   }
 
-  getLatestMovie(){
-    var url = '/movie/popular?'
+  getLatestMovie(page = 1){
+    var url = `/movie/popular?page=${page}&`
+    return this.http.get(this.url_base + url + this.api_key)
+  }
+
+  getMovieById(id){
+    var url = `/movie/${id}?`
     return this.http.get(this.url_base + url + this.api_key)
   }
 
