@@ -37,8 +37,11 @@ ionic build android
 ionic build ios
 Iniciar o emulador com o aplicativo
 
-ionic emulate android
-ionic emulate ios
+ionic cordova emulate android
+ionic cordova emulate ios
 
 cordova build --debug plataforma
+
+ionic cordova platform add browser
+ionic cordova run browser
 */ 
