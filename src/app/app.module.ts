@@ -14,6 +14,7 @@ import { FeedPageModule } from '../pages/feed/feed.module';
 import { FinancasPageModule } from '../pages/financas/financas.module';
 import { IntroPageModule } from '../pages/intro/intro.module';
 import { HttpClientModule } from '@angular/common/http';
+import { Http, Headers, RequestOptions, HttpModule } from '@angular/http';
 import { ConfigPageModule } from '../pages/config/config.module';
 import { PerfilPageModule } from '../pages/perfil/perfil.module';
 import { FilmeDetalhesPageModule } from '../pages/filme-detalhes/filme-detalhes.module';
@@ -37,7 +38,8 @@ import { FilmeDetalhesPageModule } from '../pages/filme-detalhes/filme-detalhes.
     HttpClientModule,
     ConfigPageModule,
     PerfilPageModule,
-    FilmeDetalhesPageModule
+    FilmeDetalhesPageModule,
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
