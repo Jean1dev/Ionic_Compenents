@@ -6,6 +6,9 @@
 *.log
 *.tmp
 *.tmp.*
+*.png
+*.xml
+*.md
 log.txt
 *.sublime-project
 *.sublime-workspace
