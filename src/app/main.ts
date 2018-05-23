@@ -44,4 +44,6 @@ cordova build --debug plataforma
 
 ionic cordova platform add browser
 ionic cordova run browser
+
+ionic cordova resources
 */ 
